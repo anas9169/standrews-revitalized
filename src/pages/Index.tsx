@@ -3,8 +3,6 @@ import Navigation from '@/components/ui/navigation';
 import Hero from '@/components/ui/hero';
 import AboutSection from '@/components/ui/about-section';
 import TreatmentsSection from '@/components/ui/treatments-section';
-import TeamSection from '@/components/ui/team-section';
-import NewPatientsSection from '@/components/ui/new-patients-section';
 import ReviewsSection from '@/components/ui/reviews-section';
 import ContactSection from '@/components/ui/contact-section';
 import Footer from '@/components/ui/footer';
@@ -17,8 +15,6 @@ const Index = () => {
         <Hero />
         <AboutSection />
         <TreatmentsSection />
-        <TeamSection />
-        <NewPatientsSection />
         <ReviewsSection />
         <ContactSection />
       </main>

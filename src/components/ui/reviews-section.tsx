@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote } from 'lucide-react';
 
@@ -37,18 +38,38 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-warm-gray">
+    <section id="reviews" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center justify-center gap-2 mb-4"
+          >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-8 w-8 fill-yellow-400 text-yellow-400" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, rotate: -180 }}
+                  whileInView={{ opacity: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                >
+                  <Star className="h-8 w-8 fill-yellow-400 text-yellow-400" />
+                </motion.div>
               ))}
             </div>
             <span className="text-2xl font-bold text-foreground">5.0</span>
-          </div>
+          </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Read our 5-star reviews
           </h2>
@@ -56,16 +77,20 @@ const ReviewsSection = () => {
             Don't just take our word for it - hear what our patients have to say about 
             their experience at St Andrews Dental Practice.
           </p>
-        </div>
+        </motion.div>
 
         {/* Reviews Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {reviews.map((review, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group border-0 shadow-dental hover:shadow-xl transition-all duration-500 transform-gpu hover:-translate-y-1 bg-background"
-              style={{ animationDelay: `${index * 100}ms` }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
             >
+              <Card className="group border-0 shadow-dental hover:shadow-xl transition-all duration-500 bg-warm-gray h-full">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   {/* Quote Icon */}
@@ -92,11 +117,18 @@ const ReviewsSection = () => {
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-background rounded-3xl p-12 shadow-dental">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center bg-warm-gray rounded-3xl p-12 shadow-dental"
+        >
           <h3 className="text-3xl font-bold text-foreground mb-4">
             Experience 5-Star Dental Care
           </h3>
@@ -105,14 +137,22 @@ const ReviewsSection = () => {
             most trusted dental practice.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-12 px-8 py-3 text-lg dental-hero-gradient">
+            <motion.button 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-12 px-8 py-3 text-lg dental-hero-gradient"
+            >
               Book Your First Visit
-            </button>
-            <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-12 px-8 py-3 text-lg">
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-12 px-8 py-3 text-lg"
+            >
               Read More Reviews
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
