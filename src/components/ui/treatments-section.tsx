@@ -5,53 +5,48 @@ import { Button } from '@/components/ui/button';
 import { 
   ArrowRight,
   Heart,
-  Activity,
-  Shield,
-  Sparkles,
-  Scissors,
-  Smile,
-  RotateCcw
+  Sparkles
 } from 'lucide-react';
 
 const TreatmentsSection = () => {
   const treatments = [
     {
-      icon: Shield,
+      icon: "🦷",
       title: 'General Dentistry',
       description: 'Enjoy a lifetime of healthy smiles',
       details: 'Comprehensive dental care including checkups, cleanings, and preventive treatments for optimal oral health.',
       color: 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400'
     },
     {
-      icon: RotateCcw,
+      icon: "🔧",
       title: 'Restorative Dentistry',
       description: 'Smile naturally, eat comfortably & live well',
       details: 'Expert fillings, crowns, bridges, and other treatments to restore your teeth to their natural function.',
       color: 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400'
     },
     {
-      icon: Sparkles,
+      icon: "✨",
       title: 'Teeth Whitening',
       description: 'Enjoy a brighter, whiter smile!',
       details: 'Professional whitening treatments for a confident, radiant smile that lights up every room.',
       color: 'bg-yellow-50 text-yellow-600 dark:bg-yellow-950/20 dark:text-yellow-400'
     },
     {
-      icon: Scissors,
+      icon: "🦷",
       title: 'Teeth Straightening',
       description: 'Transform your smile with braces',
       details: 'Modern orthodontic solutions including clear aligners and traditional braces for perfect alignment.',
       color: 'bg-green-50 text-green-600 dark:bg-green-950/20 dark:text-green-400'
     },
     {
-      icon: Smile,
+      icon: "💎",
       title: 'Cosmetic Dentistry',
       description: 'Helping you smile with confidence',
       details: 'Beautiful veneers, bonding, and complete smile makeovers for your perfect, confident smile.',
       color: 'bg-pink-50 text-pink-600 dark:bg-pink-950/20 dark:text-pink-400'
     },
     {
-      icon: Activity,
+      icon: "🦷",
       title: 'Dental Implants',
       description: 'The gold standard for replacing missing teeth',
       details: 'Permanent, natural-looking tooth replacement that feels and functions just like your real teeth.',
@@ -81,7 +76,6 @@ const TreatmentsSection = () => {
         {/* Treatments Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {treatments.map((treatment, index) => {
-            const Icon = treatment.icon;
             return (
               <motion.div
                 key={treatment.title}
@@ -109,7 +103,7 @@ const TreatmentsSection = () => {
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Icon className="h-8 w-8" />
+                      <span className="text-3xl">{treatment.icon}</span>
                     </motion.div>
 
                     {/* Content */}

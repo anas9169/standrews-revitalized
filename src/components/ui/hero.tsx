@@ -66,38 +66,14 @@ const Hero = () => {
         style={{ opacity }}
       >
         <div className="max-w-5xl">
-          {/* New Patient Promotion with enhanced animation */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8, 
-              delay: 0.3,
-              type: "spring",
-              stiffness: 100 
-            }}
-            whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center px-8 py-4 bg-white/95 backdrop-blur-sm rounded-full mb-8 shadow-lg cursor-pointer"
-          >
-            <motion.span 
-              className="text-primary font-bold text-xl mr-3"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              ✨
-            </motion.span>
-            <span className="text-primary font-bold text-xl">
-              New Patient Exam Now £65
-            </span>
-          </motion.div>
 
           {/* Main Heading with staggered animation */}
           <motion.div className="mb-8">
             <motion.h1 
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="text-6xl md:text-8xl font-bold text-white mb-4 leading-tight"
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
             >
               <motion.span 
                 className="block"
@@ -120,23 +96,23 @@ const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             style={{ y: y2 }}
-            className="flex flex-col lg:flex-row gap-6 mb-12"
+            className="flex flex-col lg:flex-row gap-4 mb-8"
           >
             <motion.div 
-              className="flex items-center gap-3 text-white/90 bg-black/20 backdrop-blur-sm rounded-lg px-4 py-3"
+              className="flex items-center gap-3 text-white/90 bg-black/20 backdrop-blur-sm rounded-lg px-3 py-2"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.3)" }}
             >
-              <MapPin className="h-6 w-6 text-primary" />
-              <span className="text-lg">17a High Street, Biggleswade, Bedfordshire, SG18 0JE</span>
+              <MapPin className="h-5 w-5 text-primary" />
+              <span className="text-sm md:text-base">17a High Street, Biggleswade, Bedfordshire, SG18 0JE</span>
             </motion.div>
             <motion.div 
-              className="flex items-center gap-3 text-white/90 bg-black/20 backdrop-blur-sm rounded-lg px-4 py-3"
+              className="flex items-center gap-3 text-white/90 bg-black/20 backdrop-blur-sm rounded-lg px-3 py-2"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.3)" }}
             >
-              <Phone className="h-6 w-6 text-primary" />
-              <span className="text-lg font-semibold">01767 313 182</span>
+              <Phone className="h-5 w-5 text-primary" />
+              <span className="text-sm md:text-base font-semibold">01767 313 182</span>
             </motion.div>
           </motion.div>
 
@@ -144,8 +120,8 @@ const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -156,7 +132,7 @@ const Hero = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ 
                     duration: 0.6, 
-                    delay: 1.4 + index * 0.1,
+                    delay: 1.0 + index * 0.1,
                     type: "spring",
                     stiffness: 100 
                   }}
@@ -166,11 +142,11 @@ const Hero = () => {
                     rotate: [0, -5, 5, 0],
                     transition: { duration: 0.3 }
                   }}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20"
                 >
-                  <Icon className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-white/80 text-sm">{stat.label}</div>
+                  <Icon className="h-6 w-6 text-primary mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-white/80 text-xs">{stat.label}</div>
                 </motion.div>
               );
             })}
@@ -180,8 +156,8 @@ const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            className="flex flex-col sm:flex-row gap-6"
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
             <motion.div 
               whileHover={{ 
@@ -190,7 +166,7 @@ const Hero = () => {
               }} 
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="lg" className="dental-hero-gradient text-xl px-10 py-8 rounded-2xl shadow-2xl">
+              <Button size="lg" className="dental-hero-gradient text-lg px-8 py-6 rounded-xl shadow-2xl">
                 <motion.span
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
@@ -201,7 +177,7 @@ const Hero = () => {
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.div>
               </Button>
             </motion.div>
@@ -215,7 +191,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-xl px-10 py-8 rounded-2xl backdrop-blur-sm"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
               >
                 Learn More About Us
               </Button>

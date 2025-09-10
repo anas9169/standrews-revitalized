@@ -1,11 +1,15 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Heart, Users, Award, Clock, Shield, Stethoscope } from 'lucide-react';
 import receptionTeam from '@/assets/reception-team.jpg';
 
 const AboutSection = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 800], [0, -150]);
+  const y2 = useTransform(scrollY, [0, 800], [0, -75]);
+  const opacity = useTransform(scrollY, [200, 600], [0, 1]);
   const stats = [
     {
       icon: Users,
@@ -58,6 +62,7 @@ const AboutSection = () => {
             type: "spring",
             stiffness: 100
           }}
+          style={{ y: y2 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -78,6 +83,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ y: y1 }}
             className="space-y-8"
           >
             <div className="space-y-6">
@@ -104,6 +110,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            style={{ opacity }}
             className="relative"
           >
             <div className="relative group overflow-hidden rounded-2xl">
