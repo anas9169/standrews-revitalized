@@ -3,27 +3,27 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
-  Smile, 
-  ShieldCheck, 
-  Sparkles, 
-  Zap, 
-  Star, 
-  Crown,
   ArrowRight,
-  Heart
+  Heart,
+  Activity,
+  Shield,
+  Sparkles,
+  Scissors,
+  Smile,
+  RotateCcw
 } from 'lucide-react';
 
 const TreatmentsSection = () => {
   const treatments = [
     {
-      icon: ShieldCheck,
+      icon: Shield,
       title: 'General Dentistry',
       description: 'Enjoy a lifetime of healthy smiles',
       details: 'Comprehensive dental care including checkups, cleanings, and preventive treatments for optimal oral health.',
       color: 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400'
     },
     {
-      icon: Crown,
+      icon: RotateCcw,
       title: 'Restorative Dentistry',
       description: 'Smile naturally, eat comfortably & live well',
       details: 'Expert fillings, crowns, bridges, and other treatments to restore your teeth to their natural function.',
@@ -37,21 +37,21 @@ const TreatmentsSection = () => {
       color: 'bg-yellow-50 text-yellow-600 dark:bg-yellow-950/20 dark:text-yellow-400'
     },
     {
-      icon: Zap,
+      icon: Scissors,
       title: 'Teeth Straightening',
       description: 'Transform your smile with braces',
       details: 'Modern orthodontic solutions including clear aligners and traditional braces for perfect alignment.',
       color: 'bg-green-50 text-green-600 dark:bg-green-950/20 dark:text-green-400'
     },
     {
-      icon: Star,
+      icon: Smile,
       title: 'Cosmetic Dentistry',
       description: 'Helping you smile with confidence',
       details: 'Beautiful veneers, bonding, and complete smile makeovers for your perfect, confident smile.',
       color: 'bg-pink-50 text-pink-600 dark:bg-pink-950/20 dark:text-pink-400'
     },
     {
-      icon: Smile,
+      icon: Activity,
       title: 'Dental Implants',
       description: 'The gold standard for replacing missing teeth',
       details: 'Permanent, natural-looking tooth replacement that feels and functions just like your real teeth.',
@@ -88,8 +88,17 @@ const TreatmentsSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100 
+                }}
+                whileHover={{ 
+                  y: -12, 
+                  scale: 1.02,
+                  rotate: index % 2 === 0 ? 1 : -1 
+                }}
               >
                 <Card className="group border-0 shadow-dental hover:shadow-xl transition-all duration-500 cursor-pointer h-full bg-background">
                 <CardContent className="p-8">

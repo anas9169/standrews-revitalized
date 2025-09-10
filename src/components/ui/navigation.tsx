@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import logo from '@/assets/logo.png';
+import logo from '/lovable-uploads/52a1ec57-e30a-432d-934d-48bef54c2a0d.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,6 @@ const Navigation = () => {
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
     { name: 'Treatments', href: '#treatments' },
-    { name: 'New Patients', href: '#new-patients' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'Contact', href: '#contact' },
   ];

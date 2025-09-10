@@ -202,19 +202,6 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Emergency Contact */}
-        <div className="mt-12 bg-warm-gray rounded-3xl p-12 text-center">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
-            Dental Emergency?
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            If you have a dental emergency outside of our normal opening hours, 
-            please call our practice number for emergency contact information.
-          </p>
-          <Button size="lg" className="dental-hero-gradient">
-            Emergency Contact: 01767 313 182
-          </Button>
-        </div>
       </div>
     </section>
   );

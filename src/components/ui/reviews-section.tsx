@@ -42,10 +42,14 @@ const ReviewsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, rotateX: -10 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ 
+            duration: 0.9,
+            type: "spring",
+            stiffness: 90
+          }}
           className="text-center mb-16"
         >
           <motion.div 
