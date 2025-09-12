@@ -30,27 +30,6 @@ const TreatmentsSection = () => {
       description: 'Enjoy a brighter, whiter smile!',
       details: 'Professional whitening treatments for a confident, radiant smile that lights up every room.',
       color: 'bg-yellow-50 text-yellow-600 dark:bg-yellow-950/20 dark:text-yellow-400'
-    },
-    {
-      icon: "🦷",
-      title: 'Teeth Straightening',
-      description: 'Transform your smile with braces',
-      details: 'Modern orthodontic solutions including clear aligners and traditional braces for perfect alignment.',
-      color: 'bg-green-50 text-green-600 dark:bg-green-950/20 dark:text-green-400'
-    },
-    {
-      icon: "💎",
-      title: 'Cosmetic Dentistry',
-      description: 'Helping you smile with confidence',
-      details: 'Beautiful veneers, bonding, and complete smile makeovers for your perfect, confident smile.',
-      color: 'bg-pink-50 text-pink-600 dark:bg-pink-950/20 dark:text-pink-400'
-    },
-    {
-      icon: "🦷",
-      title: 'Dental Implants',
-      description: 'The gold standard for replacing missing teeth',
-      details: 'Permanent, natural-looking tooth replacement that feels and functions just like your real teeth.',
-      color: 'bg-teal-50 text-teal-600 dark:bg-teal-950/20 dark:text-teal-400'
     }
   ];
 

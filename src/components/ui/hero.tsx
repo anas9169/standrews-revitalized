@@ -116,41 +116,6 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Stats Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
-          >
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: 1.0 + index * 0.1,
-                    type: "spring",
-                    stiffness: 100 
-                  }}
-                  whileHover={{ 
-                    scale: 1.1, 
-                    y: -5,
-                    rotate: [0, -5, 5, 0],
-                    transition: { duration: 0.3 }
-                  }}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20"
-                >
-                  <Icon className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-white/80 text-xs">{stat.label}</div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
 
           {/* CTA Buttons with enhanced animations */}
           <motion.div 

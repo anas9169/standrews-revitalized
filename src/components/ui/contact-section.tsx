@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -42,25 +43,51 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-warm-gray">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Visit Us Today
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We're conveniently located in the heart of Biggleswade, with excellent 
-            transport links and parking facilities.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                  Visit Us Today
+                </h2>
+                <div className="w-20 h-1 bg-primary rounded-full"></div>
+              </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-6">
-            {/* Address */}
-            <Card className="border-0 shadow-dental">
-              <CardContent className="p-8">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg text-muted-foreground leading-relaxed"
+              >
+                We're conveniently located in the heart of Biggleswade, with excellent 
+                transport links and parking facilities.
+              </motion.p>
+
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-y-6"
+            >
+              {/* Address */}
+              <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-primary/10">
                     <MapPin className="h-6 w-6 text-primary" />
@@ -68,138 +95,76 @@ const ContactSection = () => {
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-foreground">Address</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      St Andrews Dental Practice<br />
-                      17a High Street<br />
-                      Biggleswade<br />
+                      17a High Street, Biggleswade<br />
                       Bedfordshire, SG18 0JE
                     </p>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="mt-3"
-                      asChild
-                    >
-                      <a 
-                        href="https://maps.google.com/?q=17a+High+Street+Biggleswade+SG18+0JE" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View on Google Maps
-                      </a>
-                    </Button>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* Phone & Email */}
-            <Card className="border-0 shadow-dental">
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-foreground">Phone</h3>
-                      <p className="text-muted-foreground">01767 313 182</p>
-                      <Button size="sm" className="dental-hero-gradient" asChild>
-                        <a href="tel:01767313182">Call Now</a>
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">info@standrewsdental.co.uk</p>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href="mailto:info@standrewsdental.co.uk">Send Email</a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Opening Hours */}
-          <div className="lg:col-span-1">
-            <Card className="border-0 shadow-dental">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <Clock className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">Opening Hours</h3>
-                </div>
-                
+              {/* Contact Details */}
+              <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <div className="space-y-4">
-                  {openingHours.map((schedule) => (
-                    <div key={schedule.day} className="flex justify-between items-center py-2 border-b border-border last:border-b-0">
-                      <span className="font-medium text-foreground">{schedule.day}</span>
-                      <span className="text-muted-foreground">{schedule.hours}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-center gap-4">
+                    <Phone className="h-5 w-5 text-primary" />
+                    <span className="text-foreground font-medium">01767 313 182</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Mail className="h-5 w-5 text-primary" />
+                    <span className="text-foreground">info@standrewsdental.co.uk</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Clock className="h-5 w-5 text-primary" />
+                    <span className="text-foreground">Mon-Thu: 9-6, Fri: 9-5</span>
+                  </div>
                 </div>
+              </div>
+            </motion.div>
+            </div>
+          </motion.div>
 
-                <div className="mt-6 p-4 bg-primary/5 rounded-lg">
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Emergency appointments</strong> available outside normal hours. 
-                    Please call for urgent dental care.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Getting Here */}
-          <div className="lg:col-span-1">
-            <Card className="border-0 shadow-dental">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-foreground mb-6">Getting Here</h3>
-                
-                <div className="space-y-6">
-                  {transportOptions.map((option) => {
-                    const Icon = option.icon;
-                    return (
-                      <div key={option.title} className="flex items-start gap-4">
-                        <div className="p-2 rounded-full bg-primary/10">
-                          <Icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-foreground mb-1">{option.title}</h4>
-                          <p className="text-sm text-muted-foreground">{option.description}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="mt-6 p-4 bg-warm-gray rounded-lg">
-                  <h4 className="font-medium text-foreground mb-2">Need Directions?</h4>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    We're located in the heart of Biggleswade High Street, easily accessible 
-                    from all surrounding areas.
-                  </p>
-                  <Button size="sm" variant="outline" className="w-full" asChild>
-                    <a 
-                      href="https://maps.google.com/?q=17a+High+Street+Biggleswade+SG18+0JE" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      Get Directions
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <motion.div
+              whileHover={{ 
+                scale: 1.02, 
+                rotateX: 2,
+                rotateY: -2 
+              }}
+              transition={{ duration: 0.4 }}
+              className="relative overflow-hidden rounded-2xl shadow-2xl"
+            >
+              <img
+                src="/assets/dentist-2.jpg"
+                alt="Contact Us"
+                className="w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </motion.div>
+            
+            {/* Quick Contact Overlay */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute bottom-6 left-6 right-6"
+            >
+              <div className="bg-background/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <h3 className="text-xl font-semibold text-foreground mb-4">Quick Contact</h3>
+                <Button className="w-full dental-hero-gradient">
+                  Book Appointment
+                  <Phone className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
 
       </div>

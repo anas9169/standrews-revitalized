@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import logo from '/lovable-uploads/52a1ec57-e30a-432d-934d-48bef54c2a0d.png';
 
 const Navigation = () => {
@@ -10,9 +16,14 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
-    { name: 'Treatments', href: '#treatments' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'Contact', href: '#contact' },
+  ];
+
+  const treatments = [
+    { name: 'Cosmetic', items: ['Invisalign', 'Porcelain Veneers', 'Teeth Whitening', 'White Filling/Bonding'] },
+    { name: 'Restorative Treatment', items: ['Bridges', 'Dentures', 'Crowns', 'Dental Implants'] },
+    { name: 'General Dentistry', items: ['Dental Examination', 'Dental Hygiene', 'Root Canal Treatment', 'Snoring', 'TMD/Jaw Pain', 'Mouth Guards'] }
   ];
 
   return (
@@ -35,6 +46,35 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  Treatments
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-80 bg-background border border-border shadow-lg z-50">
+                <div className="grid grid-cols-3 gap-6 p-6">
+                  {treatments.map((category) => (
+                    <div key={category.name} className="space-y-3">
+                      <h4 className="font-semibold text-primary text-sm">{category.name}</h4>
+                      <ul className="space-y-2">
+                        {category.items.map((item) => (
+                          <li key={item}>
+                            <a
+                              href="#treatments"
+                              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                            >
+                              {item}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Desktop Actions */}
