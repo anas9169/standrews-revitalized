@@ -46,24 +46,22 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1 text-foreground hover:text-white transition-colors duration-200 font-medium">
-                  Treatments
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-96 bg-background border border-border shadow-lg z-50" onMouseEnter={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-3 gap-6 p-6">
+            <div className="group relative">
+              <Button variant="ghost" className="flex items-center gap-1 text-foreground group-hover:text-white transition-colors duration-200 font-medium">
+                Treatments
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+              <div className="absolute top-full left-0 mt-2 w-[600px] bg-background border border-border shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="grid grid-cols-3 gap-8 p-8">
                   {treatments.map((category) => (
-                    <div key={category.name} className="space-y-3">
-                      <h4 className="font-semibold text-primary text-sm">{category.name}</h4>
-                      <ul className="space-y-2">
+                    <div key={category.name} className="space-y-4">
+                      <h4 className="font-semibold text-primary text-base">{category.name}</h4>
+                      <ul className="space-y-3">
                         {category.items.map((item) => (
                           <li key={item}>
                             <a
                               href="#treatments"
-                              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 block py-1"
                             >
                               {item}
                             </a>
@@ -73,8 +71,8 @@ const Navigation = () => {
                     </div>
                   ))}
                 </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </div>
+            </div>
           </div>
 
           {/* Desktop Actions */}

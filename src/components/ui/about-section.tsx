@@ -93,33 +93,33 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-lg text-muted-foreground leading-relaxed"
               >
-                We believe that <span className="relative inline-block px-8 py-3">
-                  <span className="text-primary font-semibold relative z-10">everyone</span>
+                We believe that <span className="relative inline-block mx-2">
+                  <span className="text-primary font-semibold relative z-10 px-4 py-2">everyone</span>
                   <motion.svg
-                    className="absolute -inset-8 pointer-events-none"
-                    width="180"
-                    height="90"
-                    viewBox="0 0 180 90"
+                    className="absolute inset-0 pointer-events-none"
+                    width="120"
+                    height="50"
+                    viewBox="0 0 120 50"
                     fill="none"
+                    style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
                   >
                     <motion.path
-                      d="M20 45 Q25 25, 50 30 Q75 20, 100 35 Q125 25, 150 30 Q155 45, 150 55 Q125 65, 100 55 Q75 70, 50 60 Q25 65, 20 45 Z"
+                      d="M10 25 Q15 12, 30 15 Q45 8, 60 20 Q75 12, 90 15 Q105 20, 110 25 Q105 35, 90 35 Q75 40, 60 30 Q45 42, 30 35 Q15 38, 10 25 Z"
                       stroke="hsl(var(--primary))"
-                      strokeWidth="3"
+                      strokeWidth="2.5"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeDasharray="8 4"
-                      initial={{ pathLength: 0, opacity: 0, rotate: -2 }}
-                      whileInView={{ pathLength: 1, opacity: 0.8, rotate: 1 }}
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      whileInView={{ pathLength: 1, opacity: 0.9 }}
                       viewport={{ once: true }}
                       transition={{
-                        duration: 2.5,
-                        delay: 0.5,
+                        duration: 2,
+                        delay: 0.8,
                         ease: [0.25, 0.46, 0.45, 0.94]
                       }}
                       style={{
-                        filter: 'drop-shadow(0 0 4px hsl(var(--primary) / 0.3))'
+                        filter: 'drop-shadow(0 2px 4px hsl(var(--primary) / 0.25))'
                       }}
                     />
                   </motion.svg>
