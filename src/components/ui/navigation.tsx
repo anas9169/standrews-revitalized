@@ -51,7 +51,7 @@ const Navigation = () => {
                 Treatments
                 <ChevronDown className="h-4 w-4" />
               </Button>
-              <div className="absolute top-full left-0 mt-2 w-[600px] bg-background border border-border shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] bg-background border border-border shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="grid grid-cols-3 gap-8 p-8">
                   {treatments.map((category) => (
                     <div key={category.name} className="space-y-4">

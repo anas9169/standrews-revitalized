@@ -38,7 +38,9 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Practice Info */}
           <div className="lg:col-span-1 space-y-6">
-            <img src="/assets/st-andrews-logo-updated.png" alt="St Andrews Dental Practice" className="h-12 w-auto" />
+            <div className="bg-white p-3 rounded-lg shadow-sm inline-block">
+              <img src="/assets/st-andrews-logo-updated.png" alt="St Andrews Dental Practice" className="h-12 w-auto" />
+            </div>
             <p className="text-gray-300 leading-relaxed">
               Providing dentistry with heart to Biggleswade and surrounding areas. 
               Our experienced team is committed to your oral health and comfort.

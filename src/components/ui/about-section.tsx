@@ -93,23 +93,25 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-lg text-muted-foreground leading-relaxed"
               >
-                We believe that <span className="relative inline-block mx-2">
-                  <span className="text-primary font-semibold relative z-10 px-4 py-2">everyone</span>
+               We believe that <span className="relative inline-block mx-2">
+                  <span className="text-primary font-semibold relative z-10 px-3 py-1">everyone</span>
                   <motion.svg
                     className="absolute inset-0 pointer-events-none"
-                    width="120"
-                    height="50"
-                    viewBox="0 0 120 50"
+                    width="110"
+                    height="40"
+                    viewBox="0 0 110 40"
                     fill="none"
                     style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
                   >
-                    <motion.path
-                      d="M10 25 Q15 12, 30 15 Q45 8, 60 20 Q75 12, 90 15 Q105 20, 110 25 Q105 35, 90 35 Q75 40, 60 30 Q45 42, 30 35 Q15 38, 10 25 Z"
+                    <motion.ellipse
+                      cx="55"
+                      cy="20"
+                      rx="50"
+                      ry="18"
                       stroke="hsl(var(--primary))"
-                      strokeWidth="2.5"
+                      strokeWidth="2"
                       fill="none"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
                       initial={{ pathLength: 0, opacity: 0 }}
                       whileInView={{ pathLength: 1, opacity: 0.9 }}
                       viewport={{ once: true }}
