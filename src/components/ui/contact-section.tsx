@@ -123,14 +123,15 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Image */}
+          {/* Map and Quick Contact */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="space-y-6"
           >
+            {/* Google Maps */}
             <motion.div
               whileHover={{ 
                 scale: 1.02, 
@@ -140,21 +141,24 @@ const ContactSection = () => {
               transition={{ duration: 0.4 }}
               className="relative overflow-hidden rounded-2xl shadow-2xl"
             >
-              <img
-                src="/assets/dentist-2.jpg"
-                alt="Contact Us"
-                className="w-full h-[500px] object-cover"
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.6003580977895!2d-0.26791222349327404!3d52.087004571950935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877cc1572371dcb%3A0x8115427b12b713b!2sSt%20Andrews%20Dental%20Practice!5e0!3m2!1sen!2sin!4v1757747610698!5m2!1sen!2sin" 
+                width="100%" 
+                height="350" 
+                style={{border:0}} 
+                allowFullScreen={true}
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </motion.div>
             
-            {/* Quick Contact Overlay */}
+            {/* Quick Contact */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute bottom-6 left-6 right-6"
             >
               <div className="bg-background/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
                 <h3 className="text-xl font-semibold text-foreground mb-4">Quick Contact</h3>

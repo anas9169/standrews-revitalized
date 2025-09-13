@@ -48,12 +48,12 @@ const Navigation = () => {
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                <Button variant="ghost" className="flex items-center gap-1 text-foreground hover:text-white transition-colors duration-200 font-medium">
                   Treatments
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-80 bg-background border border-border shadow-lg z-50">
+              <DropdownMenuContent className="w-96 bg-background border border-border shadow-lg z-50" onMouseEnter={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-3 gap-6 p-6">
                   {treatments.map((category) => (
                     <div key={category.name} className="space-y-3">

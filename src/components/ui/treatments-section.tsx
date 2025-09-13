@@ -11,10 +11,10 @@ import {
 const TreatmentsSection = () => {
   const treatments = [
     {
-      icon: "🦷",
-      title: 'General Dentistry',
-      description: 'Enjoy a lifetime of healthy smiles',
-      details: 'Comprehensive dental care including checkups, cleanings, and preventive treatments for optimal oral health.',
+      icon: "✨",
+      title: 'Cosmetic Dentistry',
+      description: 'Transform your smile with confidence',
+      details: 'Professional teeth whitening, veneers, and smile makeovers to give you the beautiful smile you deserve.',
       color: 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400'
     },
     {
@@ -25,11 +25,11 @@ const TreatmentsSection = () => {
       color: 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400'
     },
     {
-      icon: "✨",
-      title: 'Teeth Whitening',
-      description: 'Enjoy a brighter, whiter smile!',
-      details: 'Professional whitening treatments for a confident, radiant smile that lights up every room.',
-      color: 'bg-yellow-50 text-yellow-600 dark:bg-yellow-950/20 dark:text-yellow-400'
+      icon: "🦷",
+      title: 'General Dentistry',
+      description: 'Enjoy a lifetime of healthy smiles',
+      details: 'Comprehensive dental care including checkups, cleanings, and preventive treatments for optimal oral health.',
+      color: 'bg-green-50 text-green-600 dark:bg-green-950/20 dark:text-green-400'
     }
   ];
 

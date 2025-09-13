@@ -93,30 +93,33 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-lg text-muted-foreground leading-relaxed"
               >
-                We believe that <span className="relative inline-block">
-                  <span className="text-primary font-semibold">everyone</span>
+                We believe that <span className="relative inline-block px-8 py-3">
+                  <span className="text-primary font-semibold relative z-10">everyone</span>
                   <motion.svg
-                    className="absolute -inset-1 w-full h-full"
-                    viewBox="0 0 100 20"
-                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute -inset-8 pointer-events-none"
+                    width="180"
+                    height="90"
+                    viewBox="0 0 180 90"
+                    fill="none"
                   >
-                    <motion.ellipse
-                      cx="50"
-                      cy="10"
-                      rx="45"
-                      ry="8"
-                      fill="none"
+                    <motion.path
+                      d="M20 45 Q25 25, 50 30 Q75 20, 100 35 Q125 25, 150 30 Q155 45, 150 55 Q125 65, 100 55 Q75 70, 50 60 Q25 65, 20 45 Z"
                       stroke="hsl(var(--primary))"
-                      strokeWidth="2"
-                      strokeDasharray="200"
-                      strokeDashoffset="200"
-                      initial={{ strokeDashoffset: 200 }}
-                      whileInView={{ strokeDashoffset: 0 }}
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeDasharray="8 4"
+                      initial={{ pathLength: 0, opacity: 0, rotate: -2 }}
+                      whileInView={{ pathLength: 1, opacity: 0.8, rotate: 1 }}
                       viewport={{ once: true }}
-                      transition={{ 
-                        duration: 1.5, 
+                      transition={{
+                        duration: 2.5,
                         delay: 0.5,
-                        ease: "easeInOut"
+                        ease: [0.25, 0.46, 0.45, 0.94]
+                      }}
+                      style={{
+                        filter: 'drop-shadow(0 0 4px hsl(var(--primary) / 0.3))'
                       }}
                     />
                   </motion.svg>
