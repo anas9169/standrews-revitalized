@@ -49,10 +49,24 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-20 bg-background relative overflow-hidden">
-      {/* Parallax Background */}
+      {/* Full Background Image */}
       <motion.div 
         style={{ y: y1 }}
-        className="absolute inset-0 opacity-[0.12]"
+        className="absolute inset-0"
+      >
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/assets/reception-team.jpg)`,
+          }}
+        />
+        <div className="absolute inset-0 bg-background/85 backdrop-blur-[2px]"></div>
+      </motion.div>
+      
+      {/* Parallax Pattern Overlay */}
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute inset-0 opacity-[0.08]"
       >
         <div 
           className="w-full h-[120%] bg-repeat"
@@ -61,20 +75,6 @@ const ContactSection = () => {
             backgroundSize: '380px 380px',
             filter: 'sepia(100%) saturate(160%) hue-rotate(280deg) brightness(0.6)',
             transform: 'rotate(20deg)',
-          }}
-        />
-      </motion.div>
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute inset-0 opacity-[0.03]"
-      >
-        <div 
-          className="w-full h-[120%] bg-repeat"
-          style={{
-            backgroundImage: `url(${leafPattern})`,
-            backgroundSize: '280px 280px',
-            filter: 'sepia(100%) saturate(140%) hue-rotate(320deg)',
-            transform: 'rotate(-25deg) scale(1.1)',
           }}
         />
       </motion.div>
