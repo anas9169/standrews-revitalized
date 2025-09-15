@@ -50,10 +50,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-background relative overflow-hidden">
       {/* Full Background Image */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute inset-0"
-      >
+      <div className="absolute inset-0">
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
@@ -61,11 +58,11 @@ const ContactSection = () => {
           }}
         />
         <div className="absolute inset-0 bg-background/85 backdrop-blur-[2px]"></div>
-      </motion.div>
+      </div>
       
       {/* Parallax Pattern Overlay */}
       <motion.div 
-        style={{ y: y2 }}
+        style={{ y: y1 }}
         className="absolute inset-0 opacity-[0.08]"
       >
         <div 
