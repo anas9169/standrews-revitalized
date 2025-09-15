@@ -11,8 +11,8 @@ import leafPattern from '@/assets/leaf-pattern.png';
 
 const TreatmentsSection = () => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, 100]);
+  const y1 = useTransform(scrollY, [0, 1000], [0, -400]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, 200]);
 
   const treatments = [
     {
@@ -43,7 +43,7 @@ const TreatmentsSection = () => {
       {/* Parallax Background */}
       <motion.div 
         style={{ y: y1 }}
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-[0.15]"
       >
         <div 
           className="w-full h-[120%] bg-repeat"

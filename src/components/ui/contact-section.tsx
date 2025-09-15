@@ -16,8 +16,8 @@ import leafPattern from '@/assets/leaf-pattern.png';
 
 const ContactSection = () => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1400], [0, -100]);
-  const y2 = useTransform(scrollY, [0, 1400], [0, 50]);
+  const y1 = useTransform(scrollY, [0, 1400], [0, -300]);
+  const y2 = useTransform(scrollY, [0, 1400], [0, 150]);
 
   const openingHours = [
     { day: 'Monday', hours: '9:00 AM - 6:00 PM' },
@@ -52,7 +52,7 @@ const ContactSection = () => {
       {/* Parallax Background */}
       <motion.div 
         style={{ y: y1 }}
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.12]"
       >
         <div 
           className="w-full h-[120%] bg-repeat"

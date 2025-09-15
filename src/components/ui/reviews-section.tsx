@@ -44,35 +44,6 @@ const ReviewsSection = () => {
 
   return (
     <section id="reviews" className="py-20 bg-warm-gray relative overflow-hidden">
-      {/* Parallax Background */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute inset-0 opacity-[0.08]"
-      >
-        <div 
-          className="w-full h-[120%] bg-repeat"
-          style={{
-            backgroundImage: `url(${leafPattern})`,
-            backgroundSize: '350px 350px',
-            filter: 'sepia(100%) saturate(180%) hue-rotate(30deg) brightness(0.7)',
-            transform: 'rotate(-15deg)',
-          }}
-        />
-      </motion.div>
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute inset-0 opacity-[0.04]"
-      >
-        <div 
-          className="w-full h-[120%] bg-repeat"
-          style={{
-            backgroundImage: `url(${leafPattern})`,
-            backgroundSize: '250px 250px',
-            filter: 'sepia(100%) saturate(120%) hue-rotate(60deg)',
-            transform: 'rotate(30deg) scale(0.8)',
-          }}
-        />
-      </motion.div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
