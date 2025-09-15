@@ -1,9 +1,14 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote } from 'lucide-react';
+import leafPattern from '@/assets/leaf-pattern.png';
 
 const ReviewsSection = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 1200], [0, -150]);
+  const y2 = useTransform(scrollY, [0, 1200], [0, 75]);
+
   const reviews = [
     {
       text: "Made to feel completely comfortable. Everything explained in a way that was understandable. OUTSTANDING.",
@@ -38,8 +43,37 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="reviews" className="py-20 bg-warm-gray relative overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute inset-0 opacity-[0.04]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${leafPattern})`,
+            backgroundSize: '350px 350px',
+            filter: 'sepia(100%) saturate(180%) hue-rotate(30deg) brightness(0.7)',
+            transform: 'rotate(-15deg)',
+          }}
+        />
+      </motion.div>
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute inset-0 opacity-[0.02]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${leafPattern})`,
+            backgroundSize: '250px 250px',
+            filter: 'sepia(100%) saturate(120%) hue-rotate(60deg)',
+            transform: 'rotate(30deg) scale(0.8)',
+          }}
+        />
+      </motion.div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <motion.div

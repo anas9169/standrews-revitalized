@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -12,8 +12,13 @@ import {
   Bus,
   Train
 } from 'lucide-react';
+import leafPattern from '@/assets/leaf-pattern.png';
 
 const ContactSection = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 1400], [0, -100]);
+  const y2 = useTransform(scrollY, [0, 1400], [0, 50]);
+
   const openingHours = [
     { day: 'Monday', hours: '9:00 AM - 6:00 PM' },
     { day: 'Tuesday', hours: '9:00 AM - 6:00 PM' },
@@ -43,8 +48,37 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-warm-gray">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute inset-0 opacity-[0.03]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${leafPattern})`,
+            backgroundSize: '380px 380px',
+            filter: 'sepia(100%) saturate(160%) hue-rotate(280deg) brightness(0.6)',
+            transform: 'rotate(20deg)',
+          }}
+        />
+      </motion.div>
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute inset-0 opacity-[0.025]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${leafPattern})`,
+            backgroundSize: '280px 280px',
+            filter: 'sepia(100%) saturate(140%) hue-rotate(320deg)',
+            transform: 'rotate(-25deg) scale(1.1)',
+          }}
+        />
+      </motion.div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div

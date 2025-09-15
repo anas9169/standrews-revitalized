@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -7,8 +7,13 @@ import {
   Heart,
   Sparkles
 } from 'lucide-react';
+import leafPattern from '@/assets/leaf-pattern.png';
 
 const TreatmentsSection = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, 100]);
+
   const treatments = [
     {
       icon: "✨",
@@ -34,8 +39,36 @@ const TreatmentsSection = () => {
   ];
 
   return (
-    <section id="treatments" className="py-20 bg-warm-gray">
-      <div className="container mx-auto px-4">
+    <section id="treatments" className="py-20 bg-background relative overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute inset-0 opacity-[0.03]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${leafPattern})`,
+            backgroundSize: '400px 400px',
+            filter: 'sepia(100%) saturate(200%) hue-rotate(200deg) brightness(0.8)',
+          }}
+        />
+      </motion.div>
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute inset-0 opacity-[0.02]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${leafPattern})`,
+            backgroundSize: '300px 300px',
+            filter: 'sepia(100%) saturate(150%) hue-rotate(180deg)',
+            transform: 'rotate(45deg) scale(1.2)',
+          }}
+        />
+      </motion.div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
