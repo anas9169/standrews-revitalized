@@ -52,7 +52,7 @@ const ContactSection = () => {
       {/* Parallax Background */}
       <motion.div 
         style={{ y: y1 }}
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.06]"
       >
         <div 
           className="w-full h-[120%] bg-repeat"
@@ -66,7 +66,7 @@ const ContactSection = () => {
       </motion.div>
       <motion.div 
         style={{ y: y2 }}
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute inset-0 opacity-[0.03]"
       >
         <div 
           className="w-full h-[120%] bg-repeat"

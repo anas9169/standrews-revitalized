@@ -43,7 +43,7 @@ const TreatmentsSection = () => {
       {/* Parallax Background */}
       <motion.div 
         style={{ y: y1 }}
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-10"
       >
         <div 
           className="w-full h-[120%] bg-repeat"
@@ -56,7 +56,7 @@ const TreatmentsSection = () => {
       </motion.div>
       <motion.div 
         style={{ y: y2 }}
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.05]"
       >
         <div 
           className="w-full h-[120%] bg-repeat"
