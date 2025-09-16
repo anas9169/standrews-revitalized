@@ -48,16 +48,20 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background relative overflow-hidden min-h-screen">
+    <section id="contact" className="relative overflow-hidden w-full min-h-screen">
       {/* Full Background Image */}
       <motion.div 
         style={{ y: y1 }}
-        className="absolute inset-0 opacity-80"
+        className="absolute inset-0 w-full h-full"
       >
         <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(/assets/reception-team.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
           }}
         />
         <div className="absolute inset-0 bg-background/75 backdrop-blur-[1px]"></div>
@@ -78,7 +82,7 @@ const ContactSection = () => {
           }}
         />
       </motion.div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
