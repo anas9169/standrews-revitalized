@@ -12,7 +12,7 @@ import {
   Bus,
   Train
 } from 'lucide-react';
-import leafPattern from '@/assets/leaf-pattern.png';
+import goldenLeafPattern from '@/assets/golden-leaf-pattern.png';
 
 const ContactSection = () => {
   const { scrollY } = useScroll();
@@ -54,7 +54,7 @@ const ContactSection = () => {
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: `url(/src/assets/reception-team.jpg)`,
+            backgroundImage: `url(${goldenLeafPattern})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
