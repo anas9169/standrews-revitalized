@@ -50,38 +50,19 @@ const ContactSection = () => {
   return (
     <section id="contact" className="relative overflow-hidden w-full min-h-screen">
       {/* Full Background Image */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute inset-0 w-full h-full"
-      >
+      <div className="absolute inset-0 w-full h-full">
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(/assets/reception-team.jpg)`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
+            transform: 'none'
           }}
         />
         <div className="absolute inset-0 bg-background/75 backdrop-blur-[1px]"></div>
-      </motion.div>
-      
-      {/* Parallax Pattern Overlay */}
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute inset-0 opacity-[0.12]"
-      >
-        <div 
-          className="w-full h-[120%] bg-repeat"
-          style={{
-            backgroundImage: `url(${leafPattern})`,
-            backgroundSize: '380px 380px',
-            filter: 'sepia(100%) saturate(160%) hue-rotate(280deg) brightness(0.6)',
-            transform: 'rotate(20deg)',
-          }}
-        />
-      </motion.div>
+      </div>
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
