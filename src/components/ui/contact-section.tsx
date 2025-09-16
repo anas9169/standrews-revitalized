@@ -54,14 +54,14 @@ const ContactSection = () => {
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: `url(/assets/reception-team.jpg)`,
+            backgroundImage: `url(/src/assets/reception-team.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             transform: 'none'
           }}
         />
-        <div className="absolute inset-0 bg-background/75 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]"></div>
       </div>
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
