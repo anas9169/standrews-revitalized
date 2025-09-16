@@ -48,21 +48,36 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden w-full min-h-screen">
-      {/* Full Background Image */}
-      <div className="absolute inset-0 w-full h-full">
+    <section id="contact" className="py-20 bg-background relative overflow-hidden min-h-screen">
+      {/* Parallax Background - First Layer */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute inset-0 opacity-[0.15]"
+      >
         <div 
-          className="absolute inset-0 w-full h-full"
+          className="w-full h-[120%] bg-repeat"
           style={{
             backgroundImage: `url(${goldenLeafPattern})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat',
-            transform: 'none'
+            backgroundSize: '400px 400px',
+            filter: 'sepia(100%) saturate(200%) hue-rotate(200deg) brightness(0.8)',
           }}
         />
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]"></div>
-      </div>
+      </motion.div>
+      {/* Parallax Background - Second Layer */}
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute inset-0 opacity-[0.05]"
+      >
+        <div 
+          className="w-full h-[120%] bg-repeat"
+          style={{
+            backgroundImage: `url(${goldenLeafPattern})`,
+            backgroundSize: '300px 300px',
+            filter: 'sepia(100%) saturate(150%) hue-rotate(180deg)',
+            transform: 'rotate(45deg) scale(1.2)',
+          }}
+        />
+      </motion.div>
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
