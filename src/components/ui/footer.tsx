@@ -156,14 +156,14 @@ const Footer = () => {
               </div>
             </div>
             <div className="text-sm text-gray-400">
-              Site by{' '}
+              Digital Marketing by{' '}
               <a 
-                href="https://strandcreative.com/" 
+                href="https://www.remedo.io/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
-                STRANDcreative
+                Remedo
               </a>
             </div>
           </div>
