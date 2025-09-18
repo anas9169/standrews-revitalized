@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote } from 'lucide-react';
 import leafPattern from '@/assets/leaf-pattern.png';
+import dentist1 from '@/assets/dentist1.jpg';  // ✅ import your image here
 
 const ReviewsSection = () => {
   const { scrollY } = useScroll();
@@ -64,7 +65,7 @@ const ReviewsSection = () => {
               className="relative overflow-hidden rounded-2xl shadow-2xl"
             >
               <img
-                src="/assets/dentist-1.jpg"
+                src={dentist1}
                 alt="Happy Patient"
                 className="w-full h-[500px] object-cover"
               />

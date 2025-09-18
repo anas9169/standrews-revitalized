@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Heart, Users, Award, Clock, Shield, Stethoscope } from 'lucide-react';
-import receptionTeam from '@/assets/reception-team.jpg';
+import receptionTeam from '@/assets/reception-team.png';
 
 const AboutSection = () => {
   const { scrollY } = useScroll();
